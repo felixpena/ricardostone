@@ -140,7 +140,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 ::selection { background: var(--gold-l); color: var(--ink); }
-.wrap { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 40px; }
 
 /* NAV */
 nav {
@@ -200,6 +200,51 @@ h1.hero-tag::before {
 }
 .hero-sub strong { color: var(--ink); font-weight: 500; }
 
+/* HERO GRID */
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 300px;
+  gap: 80px; align-items: center;
+}
+.hero-facts {
+  display: flex; flex-direction: column;
+  border-left: 1px solid var(--border);
+  padding-left: 56px;
+}
+.hero-fact {
+  padding: 24px 0; border-bottom: 1px solid var(--border);
+}
+.hero-fact:first-child { border-top: 1px solid var(--border); }
+.fact-value {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px; font-weight: 500; line-height: 1;
+  color: var(--deep); margin-bottom: 6px;
+}
+.fact-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* SECTION ALT */
+.section-alt { background: var(--off); }
+
+/* ABOUT GRID */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 260px;
+  gap: 72px; align-items: start;
+}
+.about-body { max-width: none; }
+.about-pullquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px; font-style: italic; font-weight: 400;
+  line-height: 1.5; color: var(--deep);
+  border-top: 2px solid var(--gold);
+  padding-top: 22px;
+  position: sticky; top: 100px;
+}
+
 /* BUTTONS */
 .btn {
   display: inline-block;
@@ -231,20 +276,21 @@ h1.hero-tag::before {
 .insight { padding: 90px 0; border-bottom: 1px solid var(--border); }
 .insight-quote {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 4vw, 50px);
+  font-size: clamp(30px, 4vw, 58px);
   font-style: italic; font-weight: 400;
-  line-height: 1.2; color: var(--ink);
+  line-height: 1.15; color: var(--ink);
   border-left: 3px solid var(--gold);
-  padding-left: 32px;
-  max-width: 680px;
-  margin-bottom: 40px;
+  padding-left: 36px;
+  margin-bottom: 52px;
 }
-.insight-body { max-width: 580px; padding-left: 35px; }
+.insight-body {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; padding-left: 39px;
+}
 .insight-body p {
   font-size: 16px; color: var(--muted);
-  line-height: 1.8; margin-bottom: 18px;
+  line-height: 1.8;
 }
-.insight-body p:last-child { margin-bottom: 0; }
 .insight-body strong { color: var(--ink); font-weight: 500; }
 
 /* SECTION / PROCESS */
@@ -409,6 +455,12 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
 
 @media (max-width: 720px) {
   .hero { padding: 70px 0 60px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-facts { border-left: none; padding-left: 0; border-top: 1px solid var(--border); }
+  .hero-fact:first-child { border-top: none; }
+  .insight-body { grid-template-columns: 1fr; gap: 0; padding-left: 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-pullquote { position: static; }
   .btn { display: block; width: 100%; text-align: center; }
   .form-grid { grid-template-columns: 1fr; gap: 48px; }
   .foot-top { flex-direction: column; align-items: flex-start; gap: 20px; }
@@ -431,16 +483,36 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <h1 class="hero-tag">Analista Bitcoin Chile · Consultoría Privada · Desde 2017</h1>
-    <div class="hero-display">Todos entran.<br><em>Pocos saben</em><br>cuándo.</div>
-    <p class="hero-sub">
-      Tienes dinero y estás pensando en Bitcoin —
-      <strong>pero no quieres entrar a ciegas.</strong>
-      Trabajo con pocos clientes, en privado,
-      sin ruido y sin promesas de lo que nadie puede garantizar.
-    </p>
-    <a href="#solicitar" class="btn">Solicitar una conversación →</a>
-    <span class="btn-note">30 minutos · sin costo · sin compromiso</span>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1 class="hero-tag">Analista Bitcoin Chile · Consultoría Privada · Desde 2017</h1>
+        <div class="hero-display">Todos entran.<br><em>Pocos saben</em><br>cuándo.</div>
+        <p class="hero-sub">
+          Tienes dinero y estás pensando en Bitcoin —
+          <strong>pero no quieres entrar a ciegas.</strong>
+          Trabajo con pocos clientes, en privado,
+          sin ruido y sin promesas de lo que nadie puede garantizar.
+        </p>
+        <a href="#solicitar" class="btn">Solicitar una conversación →</a>
+        <span class="btn-note">30 minutos · sin costo · sin compromiso</span>
+      </div>
+      <div class="hero-right">
+        <div class="hero-facts">
+          <div class="hero-fact">
+            <span class="fact-value">2017</span>
+            <span class="fact-label">Año de inicio</span>
+          </div>
+          <div class="hero-fact">
+            <span class="fact-value">48 h</span>
+            <span class="fact-label">Tiempo de respuesta</span>
+          </div>
+          <div class="hero-fact">
+            <span class="fact-value">0</span>
+            <span class="fact-label">Conflictos de interés</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -469,30 +541,35 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
 </section>
 
 <!-- SOBRE RICARDO -->
-<section class="section" id="sobre">
+<section class="section section-alt" id="sobre">
   <div class="wrap">
     <div class="section-tag">Sobre Ricardo Stone</div>
     <h2>Empecé en 2017.<br><em>Aprendí con dinero real.</em></h2>
-    <div class="about-body">
-      <p>
-        Entré a Bitcoin en 2017, cuando casi nadie en Chile sabía lo que era.
-        Viví el alza de ese año, el colapso de 2018,
-        la recuperación de 2020 y la corrección de 2022.
-        Cada momento fue distinto —
-        y cada uno enseñó algo que no está en ningún libro.
-      </p>
-      <p>
-        No tengo afiliación con exchanges ni recibo comisiones
-        por recomendar productos.
-        Mi único incentivo es que el análisis que te entrego sea correcto
-        — <strong>porque de eso depende que vuelvas</strong>.
-      </p>
-      <p>
-        Trabajo con pocos clientes al mismo tiempo,
-        no por estrategia de marketing,
-        sino porque así funciona: cada caso necesita atención real,
-        no una plantilla enviada a cien personas.
-      </p>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>
+          Entré a Bitcoin en 2017, cuando casi nadie en Chile sabía lo que era.
+          Viví el alza de ese año, el colapso de 2018,
+          la recuperación de 2020 y la corrección de 2022.
+          Cada momento fue distinto —
+          y cada uno enseñó algo que no está en ningún libro.
+        </p>
+        <p>
+          No tengo afiliación con exchanges ni recibo comisiones
+          por recomendar productos.
+          Mi único incentivo es que el análisis que te entrego sea correcto
+          — <strong>porque de eso depende que vuelvas</strong>.
+        </p>
+        <p>
+          Trabajo con pocos clientes al mismo tiempo,
+          no por estrategia de marketing,
+          sino porque así funciona: cada caso necesita atención real,
+          no una plantilla enviada a cien personas.
+        </p>
+      </div>
+      <div class="about-pullquote">
+        "Mi único incentivo es que el análisis sea correcto — porque de eso depende que vuelvas."
+      </div>
     </div>
   </div>
 </section>
@@ -507,7 +584,7 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
         <div class="marco-label">01</div>
         <div>
           <div class="marco-title">Métricas onchain</div>
-          <p class="marco-desc">MVRV ratio, Realized Price y SOPR permiten identificar si el mercado está operando por encima o por debajo del precio de adquisición promedio de los tenedores. Es la diferencia entre lo que el precio muestra y lo que los datos revelan.</p>
+          <p class="marco-desc">Datos registrados en la blockchain que muestran el comportamiento real de los tenedores de Bitcoin — cuándo acumulan, cuándo venden, y a qué precio promedio están posicionados. Es la diferencia entre lo que el precio muestra y lo que los datos revelan.</p>
         </div>
       </div>
       <div class="marco-item">
@@ -560,7 +637,7 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
 </section>
 
 <!-- FAQ -->
-<section class="section" id="preguntas">
+<section class="section section-alt" id="preguntas">
   <div class="wrap">
     <div class="section-tag">Preguntas frecuentes</div>
     <h2>Lo que<br><em>suelen preguntar.</em></h2>
