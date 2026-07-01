@@ -113,18 +113,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg:     #0A0A0B;
-  --off:    #0F0F11;
-  --stone:  #16161A;
-  --border: #222228;
-  --ink:    #EDEAE4;
-  --muted:  #6A6762;
-  --gold:   #C4963A;
-  --gold-d: #1E1A0E;
+  --bg:     #FFFFFF;
+  --off:    #F5F3EF;
+  --stone:  #111110;
+  --border: #E2DFD8;
+  --ink:    #111110;
+  --muted:  #7C7870;
+  --gold:   #7A5C1E;
+  --gold-lt:#C4963A;
+  --gold-d: #EDE6D8;
   --white:  #FFFFFF;
 }
 
@@ -146,7 +147,7 @@ nav {
   padding: 24px 0;
   border-bottom: 1px solid var(--border);
   position: sticky; top: 0;
-  background: rgba(10,10,11,0.94);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(12px);
   z-index: 100;
 }
@@ -160,13 +161,13 @@ nav {
 .nav-cta {
   font-family: 'DM Sans', sans-serif;
   font-size: 13px; font-weight: 500;
-  color: var(--gold);
+  color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid rgba(196,150,58,0.4);
+  border-bottom: 1px solid rgba(17,17,16,0.3);
   padding-bottom: 1px;
   transition: border-color .15s, opacity .15s;
 }
-.nav-cta:hover { border-bottom-color: var(--gold); opacity: 0.8; }
+.nav-cta:hover { border-bottom-color: var(--ink); opacity: 0.6; }
 
 /* HERO */
 .hero {
@@ -174,16 +175,15 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 h1.hero-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 32px;
+  color: var(--muted); margin-bottom: 32px;
   display: flex; align-items: center; gap: 10px;
-  opacity: 0.85;
 }
 h1.hero-tag::before {
   content: ''; width: 24px; height: 1px;
-  background: var(--gold); display: inline-block;
+  background: var(--muted); display: inline-block;
 }
 .hero-display {
   font-family: 'Cormorant Garamond', serif;
@@ -202,7 +202,7 @@ h1.hero-tag::before {
 /* BUTTONS */
 .btn {
   display: inline-block;
-  background: var(--gold); color: #0A0A0B;
+  background: var(--ink); color: var(--white);
   font-family: 'DM Sans', sans-serif;
   font-size: 14px; font-weight: 500;
   letter-spacing: 0.04em;
@@ -211,20 +211,19 @@ h1.hero-tag::before {
   text-decoration: none;
   transition: background .2s, transform .15s;
 }
-.btn:hover { background: #D4A64A; transform: translateY(-1px); }
-.btn-note { display: block; font-size: 12px; color: var(--muted); margin-top: 14px; }
+.btn:hover { background: #2A2A28; transform: translateY(-1px); }
 .btn-mid {
   display: inline-block;
   margin-top: 44px;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px; font-weight: 500;
-  color: var(--gold);
+  color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid rgba(196,150,58,0.4);
+  border-bottom: 1px solid rgba(17,17,16,0.3);
   padding-bottom: 2px;
   transition: border-color .15s;
 }
-.btn-mid:hover { border-bottom-color: var(--gold); }
+.btn-mid:hover { border-bottom-color: var(--ink); }
 
 /* INSIGHT */
 .insight { padding: 100px 0; border-bottom: 1px solid var(--border); }
@@ -233,7 +232,7 @@ h1.hero-tag::before {
   font-size: clamp(30px, 4vw, 58px);
   font-style: italic; font-weight: 400;
   line-height: 1.15; color: var(--ink);
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--ink);
   padding-left: 36px;
   margin-bottom: 52px;
 }
@@ -241,23 +240,19 @@ h1.hero-tag::before {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 48px; padding-left: 39px;
 }
-.insight-body p {
-  font-size: 16px; color: var(--muted);
-  line-height: 1.8;
-}
+.insight-body p { font-size: 16px; color: var(--muted); line-height: 1.8; }
 .insight-body strong { color: var(--ink); font-weight: 500; }
 
 /* SECTIONS */
 .section { padding: 96px 0; border-bottom: 1px solid var(--border); }
 .section-alt { background: var(--off); }
 .section-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'DM Sans', sans-serif;
   font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 22px;
+  color: var(--muted); margin-bottom: 22px;
   display: flex; align-items: center; gap: 10px;
-  opacity: 0.85;
 }
-.section-tag::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+.section-tag::before { content: ''; width: 20px; height: 1px; background: var(--muted); }
 h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(34px, 4.2vw, 54px);
@@ -279,15 +274,25 @@ h2 em { font-style: italic; color: var(--gold); }
 .about-pullquote {
   font-family: 'Cormorant Garamond', serif;
   font-size: 21px; font-style: italic; font-weight: 400;
-  line-height: 1.5; color: var(--gold);
-  border-top: 1px solid var(--gold);
+  line-height: 1.5; color: var(--ink);
+  border-top: 1px solid var(--ink);
   padding-top: 24px;
   position: sticky; top: 100px;
-  opacity: 0.9;
+  opacity: 0.55;
 }
 
-/* MARCO ANALÍTICO */
-.section-dark { background: var(--stone); border-bottom: 1px solid var(--border); }
+/* MARCO ANALÍTICO — única sección oscura */
+.section-dark { background: var(--stone); border-bottom: 1px solid #252523; }
+.section-dark .section-tag { color: var(--gold-lt); }
+.section-dark .section-tag::before { background: var(--gold-lt); }
+.section-dark h2 { color: #EDEAE4; }
+.section-dark h2 em { color: var(--gold-lt); }
+.section-dark .marco-label { color: var(--gold-lt); opacity: 0.7; }
+.section-dark .marco-title { color: #EDEAE4; }
+.section-dark .marco-desc { color: #7A776F; }
+.section-dark .marco-item { border-top-color: #252523; }
+.section-dark .marco-item:last-child { border-bottom-color: #252523; }
+
 .marco-list { display: flex; flex-direction: column; }
 .marco-item {
   display: grid; grid-template-columns: 52px 1fr;
@@ -296,10 +301,10 @@ h2 em { font-style: italic; color: var(--gold); }
 }
 .marco-item:last-child { border-bottom: 1px solid var(--border); }
 .marco-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'DM Sans', sans-serif;
   font-size: 11px; font-weight: 400;
-  letter-spacing: 0.1em; color: var(--gold);
-  padding-top: 4px; opacity: 0.7;
+  letter-spacing: 0.1em; color: var(--muted);
+  padding-top: 4px;
 }
 .marco-title {
   font-family: 'Cormorant Garamond', serif;
@@ -332,11 +337,10 @@ h2 em { font-style: italic; color: var(--gold); }
 .faq-list { display: flex; flex-direction: column; }
 .faq-item {
   padding: 28px 0; border-top: 1px solid var(--border);
-  cursor: pointer;
-  transition: background .15s;
+  cursor: pointer; transition: background .15s;
 }
 .faq-item:last-child { border-bottom: 1px solid var(--border); }
-.faq-item:hover { background: rgba(196,150,58,0.03); }
+.faq-item:hover { background: rgba(17,17,16,0.02); }
 .faq-q {
   font-family: 'Cormorant Garamond', serif;
   font-size: 21px; font-weight: 500; line-height: 1.2;
@@ -344,8 +348,8 @@ h2 em { font-style: italic; color: var(--gold); }
   color: var(--ink);
 }
 .faq-toggle {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 20px; line-height: 1.2; color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px; line-height: 1.2; color: var(--muted);
   flex-shrink: 0; transition: transform .25s; user-select: none;
 }
 .faq-item.open .faq-toggle { transform: rotate(45deg); }
@@ -367,15 +371,15 @@ h2 em { font-style: italic; color: var(--gold); }
 .form-intro p strong { color: var(--ink); font-weight: 500; }
 .form-privacy {
   margin-top: 28px; border-top: 1px solid var(--border); padding-top: 20px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'DM Sans', sans-serif;
   font-size: 10px; color: var(--muted); line-height: 1.8;
-  letter-spacing: 0.04em; opacity: 0.7;
+  letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7;
 }
 
 .apply { display: flex; flex-direction: column; gap: 18px; }
 .field { display: flex; flex-direction: column; gap: 7px; }
 .field label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'DM Sans', sans-serif;
   font-size: 10px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--muted);
 }
@@ -385,7 +389,7 @@ h2 em { font-style: italic; color: var(--gold); }
   font-size: 14px; padding: 14px 16px; width: 100%;
   transition: border-color .2s; appearance: none; outline: none;
 }
-.field input:focus, .field textarea:focus { border-color: var(--gold); }
+.field input:focus, .field textarea:focus { border-color: var(--ink); }
 .field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 0.5; }
 .field textarea { resize: vertical; min-height: 110px; }
 .form-btn { width: 100%; text-align: center; }
@@ -404,27 +408,27 @@ h2 em { font-style: italic; color: var(--gold); }
 .form-success p { font-size: 14.5px; color: var(--muted); line-height: 1.7; }
 
 /* FOOTER */
-footer { border-top: 1px solid var(--border); background: var(--off); }
+footer { background: var(--stone); }
 .foot-top {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 36px 0 28px; border-bottom: 1px solid var(--border);
+  padding: 36px 0 28px; border-bottom: 1px solid #252523;
 }
 .foot-brand {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 19px; font-style: italic; color: var(--ink);
+  font-size: 19px; font-style: italic; color: #EDEAE4;
 }
 .foot-nav { display: flex; gap: 28px; }
 .foot-link {
   font-family: 'DM Sans', sans-serif;
-  font-size: 13px; color: var(--muted);
+  font-size: 13px; color: #7A776F;
   text-decoration: none; transition: color .15s;
 }
-.foot-link:hover { color: var(--ink); }
+.foot-link:hover { color: #EDEAE4; }
 .foot-bottom {
   display: flex; justify-content: space-between; align-items: center;
   padding: 18px 0;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px; color: #7A776F;
   letter-spacing: 0.04em; opacity: 0.6;
 }
 
@@ -461,11 +465,9 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
     <p class="hero-sub">
       Tienes dinero y estás pensando en Bitcoin —
       <strong>pero no quieres entrar a ciegas.</strong>
-      Trabajo con pocos clientes, en privado,
-      sin ruido y sin promesas de lo que nadie puede garantizar.
+      Trabajo con pocos clientes, en privado. Sin ruido.
     </p>
     <a href="#solicitar" class="btn">Solicitar una conversación →</a>
-    <span class="btn-note">30 minutos · sin costo · sin compromiso</span>
   </div>
 </section>
 
@@ -473,7 +475,7 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
 <section class="insight">
   <div class="wrap">
     <div class="insight-quote">
-      "Todos quieren ganar rápido.<br>Muy pocos saben cómo hacerlo bien."
+      "Todos quieren entrar.<br>Casi nadie sabe cuándo salir."
     </div>
     <div class="insight-body">
       <p>
@@ -497,31 +499,21 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
 <section class="section section-alt" id="sobre">
   <div class="wrap">
     <div class="section-tag">Sobre Ricardo Stone</div>
-    <h2>Empecé en 2017.<br><em>Aprendí con dinero real.</em></h2>
+    <h2>Análisis independiente.<br><em>Sin conflicto de interés.</em></h2>
     <div class="about-grid">
       <div class="about-body">
         <p>
-          Entré a Bitcoin en 2017, cuando casi nadie en Chile sabía lo que era.
-          Viví el alza de ese año, el colapso de 2018,
-          la recuperación de 2020 y la corrección de 2022.
-          Cada momento fue distinto —
-          y cada uno enseñó algo que no está en ningún libro.
+          Sin afiliaciones con exchanges. Sin comisiones por productos recomendados.
+          El análisis es la única cosa que vendo — y eso lo mantiene limpio.
         </p>
         <p>
-          No tengo afiliación con exchanges ni recibo comisiones
-          por recomendar productos.
-          Mi único incentivo es que el análisis que te entrego sea correcto
-          — <strong>porque de eso depende que vuelvas</strong>.
-        </p>
-        <p>
-          Trabajo con pocos clientes al mismo tiempo,
-          no por estrategia de marketing,
-          sino porque así funciona: cada caso necesita atención real,
-          no una plantilla enviada a cien personas.
+          Trabajo con un número reducido de clientes en paralelo.
+          Es una condición del servicio, no una restricción de agenda:
+          cada situación requiere lectura propia.
         </p>
       </div>
       <div class="about-pullquote">
-        "Mi único incentivo es que el análisis sea correcto — porque de eso depende que vuelvas."
+        "Sin conflicto de interés. Sin plantillas."
       </div>
     </div>
   </div>
@@ -600,10 +592,6 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
         <p class="faq-a">El comportamiento del mercado, métricas onchain y niveles clave de precio. El objetivo no es predecir el precio exacto, sino identificar en qué momento está el mercado de Bitcoin y qué implica eso para tu decisión de entrada o salida.</p>
       </div>
       <div class="faq-item">
-        <div class="faq-q">¿Trabajas con Ethereum y otras criptomonedas además de Bitcoin? <span class="faq-toggle">+</span></div>
-        <p class="faq-a">El foco principal es Bitcoin, que es el activo con mayor madurez en el mercado. En algunos casos trabajo con Ethereum cuando el cliente ya tiene exposición o está evaluando diversificar — pero Bitcoin es siempre el punto de partida del análisis.</p>
-      </div>
-      <div class="faq-item">
         <div class="faq-q">¿Qué diferencia a un consultor de Bitcoin de un broker o exchange en Chile? <span class="faq-toggle">+</span></div>
         <p class="faq-a">Un broker ejecuta órdenes. Un consultor de Bitcoin te ayuda a entender el mercado antes de decidir. No manejo fondos ni ejecuto operaciones — mi rol es entregarte el análisis para que tú tomes la decisión con más información.</p>
       </div>
@@ -628,8 +616,8 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
         <h2>Hablemos<br><em>primero.</em></h2>
         <p>La conversación es sin costo y sin compromiso.
         <strong>No acepto todos los casos</strong> —
-        quiero asegurarme de poder aportarte algo real
-        antes de acordar cualquier cosa.</p>
+        si el análisis no agrega valor a tu situación,
+        te lo digo en esa primera conversación.</p>
         <p>Respondo en menos de 48 horas.</p>
         <div class="form-privacy">
           Todo lo que compartas es estrictamente confidencial.
@@ -651,7 +639,7 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
             <textarea name="situacion" placeholder="Qué tienes, qué estás considerando, y qué no tienes claro..." required></textarea>
           </div>
           <button type="submit" class="btn form-btn">Enviar solicitud →</button>
-          <p class="form-fine">Respondo en menos de 48h. Sin spam. Sin suscripciones. Todo es confidencial.</p>
+          <p class="form-fine">Respondo en menos de 48h. Todo es confidencial.</p>
         </form>
 
         <div class="form-success" id="form-success">
@@ -676,7 +664,7 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
     </div>
     <div class="foot-bottom">
       <span>© 2025 Ricardo Stone · Chile</span>
-      <span>Consultoría privada · Confidencialidad garantizada</span>
+      <span>Consultoría privada · Santiago, Chile</span>
     </div>
   </div>
 </footer>
