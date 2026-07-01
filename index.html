@@ -200,32 +200,6 @@ h1.hero-tag::before {
 }
 .hero-sub strong { color: var(--ink); font-weight: 500; }
 
-/* HERO GRID */
-.hero-grid {
-  display: grid; grid-template-columns: 1fr 300px;
-  gap: 80px; align-items: center;
-}
-.hero-facts {
-  display: flex; flex-direction: column;
-  border-left: 1px solid var(--border);
-  padding-left: 56px;
-}
-.hero-fact {
-  padding: 24px 0; border-bottom: 1px solid var(--border);
-}
-.hero-fact:first-child { border-top: 1px solid var(--border); }
-.fact-value {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px; font-weight: 500; line-height: 1;
-  color: var(--deep); margin-bottom: 6px;
-}
-.fact-label {
-  display: block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--muted);
-}
 
 /* SECTION ALT */
 .section-alt { background: var(--off); }
@@ -455,10 +429,7 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
 
 @media (max-width: 720px) {
   .hero { padding: 70px 0 60px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero-facts { border-left: none; padding-left: 0; border-top: 1px solid var(--border); }
-  .hero-fact:first-child { border-top: none; }
-  .insight-body { grid-template-columns: 1fr; gap: 0; padding-left: 0; }
+.insight-body { grid-template-columns: 1fr; gap: 0; padding-left: 0; }
   .about-grid { grid-template-columns: 1fr; gap: 36px; }
   .about-pullquote { position: static; }
   .btn { display: block; width: 100%; text-align: center; }
@@ -483,36 +454,16 @@ footer { border-top: 1px solid var(--border); background: var(--off); }
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-left">
-        <h1 class="hero-tag">Analista Bitcoin Chile · Consultoría Privada · Desde 2017</h1>
-        <div class="hero-display">Todos entran.<br><em>Pocos saben</em><br>cuándo.</div>
-        <p class="hero-sub">
-          Tienes dinero y estás pensando en Bitcoin —
-          <strong>pero no quieres entrar a ciegas.</strong>
-          Trabajo con pocos clientes, en privado,
-          sin ruido y sin promesas de lo que nadie puede garantizar.
-        </p>
-        <a href="#solicitar" class="btn">Solicitar una conversación →</a>
-        <span class="btn-note">30 minutos · sin costo · sin compromiso</span>
-      </div>
-      <div class="hero-right">
-        <div class="hero-facts">
-          <div class="hero-fact">
-            <span class="fact-value">2017</span>
-            <span class="fact-label">Año de inicio</span>
-          </div>
-          <div class="hero-fact">
-            <span class="fact-value">48 h</span>
-            <span class="fact-label">Tiempo de respuesta</span>
-          </div>
-          <div class="hero-fact">
-            <span class="fact-value">0</span>
-            <span class="fact-label">Conflictos de interés</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h1 class="hero-tag">Analista Bitcoin Chile · Consultoría Privada · Desde 2017</h1>
+    <div class="hero-display">Todos entran.<br><em>Pocos saben</em><br>cuándo.</div>
+    <p class="hero-sub">
+      Tienes dinero y estás pensando en Bitcoin —
+      <strong>pero no quieres entrar a ciegas.</strong>
+      Trabajo con pocos clientes, en privado,
+      sin ruido y sin promesas de lo que nadie puede garantizar.
+    </p>
+    <a href="#solicitar" class="btn">Solicitar una conversación →</a>
+    <span class="btn-note">30 minutos · sin costo · sin compromiso</span>
   </div>
 </section>
 
